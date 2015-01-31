@@ -1,0 +1,34 @@
+# coreutils
+alias c="cat"
+alias l="ls -hl"
+alias lt="ls -hlt"
+alias ll="ls -al"
+alias rr="rm -r"
+alias r="readlink -m"
+alias ct="column -t"
+alias ch="chmod -R 755"
+alias chh="chmod -R 644"
+alias grep="grep --color"
+alias yy="rsync -azv --progress"
+
+# awk 
+alias awkf="awk -F'\t'"
+alias length="awk '{print length}'"
+# notesappend
+alias n="history | tail -2 | head -1 | tr -s ' ' | cut -d' ' -f3- | awk '{print \"# \"\$0}' >> notes"
+
+# HTML-related
+alias htmlsed="sed 's|\&|\&amp\;|g; s|>|\&gt\;|g; s|<|\&lt\;|g;'"
+
+# git
+alias ga="git add" 
+alias gc="git commit -m"
+alias gpull="git pull"
+alias gp="git push"
+alias gs="git status"
+alias gl="git log"
+alias gg="git log --pretty=format:'%h %s %an' --graph"
+
+# bioinformatics
+# useful for viewing vcf files: 
+alias vv="sed '/^##/d' | column -t | less -S"

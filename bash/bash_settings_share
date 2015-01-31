@@ -1,0 +1,44 @@
+# ----- READLINE FUNCTION KEY BINDINGS -----
+# useful functions and short cuts on the command line
+# see all available Readline functions with command: bind -l
+# see current key bindings: bind -P
+
+# make cursor jump over words
+bind '"\e[5C": forward-word'	# control+arrow_right
+bind '"\e[5D": backward-word'	# control+arrow_left
+
+# change beginning-of-line key binding b/c it interferes w screen command
+# bind '"\C-f": beginning-of-line'        # control-a is used by screens, so use control-f to jump to beginning of line (and unbind it from forward character, which is pretty useless)
+# this was my original thought but changing the escape char in screen is more comfortable. FYI, C-f and C-b are ripe for re-binding because forward-character backward-character are useless
+
+# make history searchable by entering the beginning of command and using up and down keys
+bind '"\e[A": history-search-backward'	# control+arrow_up
+bind '"\e[B": history-search-forward'	# control+arrow_down
+
+# see all readline functions and what their bey bindings are
+bind '"\ea": dump-functions'	# ESC+a
+
+# man page colorizer
+export LESS_TERMCAP_mb=$'\E[01;31m'
+export LESS_TERMCAP_md=$'\E[01;31m'
+export LESS_TERMCAP_me=$'\E[0m'
+export LESS_TERMCAP_se=$'\E[0m'
+export LESS_TERMCAP_so=$'\E[01;44;33m'
+export LESS_TERMCAP_ue=$'\E[0m'
+export LESS_TERMCAP_us=$'\E[01;32m'
+
+# set editor
+#EDITOR=`which nano`
+EDITOR=`which vim`
+
+# command line key bindings
+#set -o vi	# vi style command line
+set -o emacs	# emacs style command line
+
+# append history 
+shopt -s histappend
+export PROMPT_COMMAND='history -a'
+
+# unset time zone variable, in case it's set
+unset TZ
+
