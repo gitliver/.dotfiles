@@ -1,0 +1,7 @@
+[push]
+	default = matching 
+[user]
+	name = gitliver
+	email = oe2118@cumc.columbia.edu 
+[color]
+	ui = auto	

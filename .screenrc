@@ -1,0 +1,25 @@
+# change escape char to C-f rather than C-a
+escape ^Ff
+
+defscrollback 5000
+shelltitle '$ |bash'
+autodetach on
+
+# disable the startup splash message that screen displays on startup
+startup_message off
+# create a status line at the bottom of the screen.  this will show the titles and locations of
+# all screen windows you have open at any given time
+
+
+#hardstatus alwayslastline "%{= dR} %-Lw%50>%{= dG}%n%f* %{= dW}%t%{= dR}%+Lw%<"
+hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{=kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B}%Y-%m-%d %{W}%c %{g}]'
+#hardstatus alwayslastline "%{.bW}%-w%{.rW}%n %t%{-}%+w %=%{..G} %H %{..Y} %d/%m %C%a"
+
+
+#use F8 to turn the status bar off at the bottom of the screen
+bindkey -k k5 hardstatus alwayslastline
+# use F9 to turn the status bar on the bottom back on
+bindkey -k k6 hardstatus alwaysignore
+# the next 2 lines are set up to use F1 and F2 to move one screen forward or backward (respectively) through your screen session.
+bindkey -k k1 prev
+bindkey -k k2 next
