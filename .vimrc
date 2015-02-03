@@ -5,11 +5,24 @@ filetype plugin indent on
 
 " set nerd tree key bindings
 nmap \e :NERDTreeToggle<CR>
+
+"Movements
+   nnoremap j gj
+   nnoremap k gk
+   xnoremap j gj
+   xnoremap k gk
+
+   nnoremap <down> gj
+   nnoremap <up> gk
+   xnoremap <down> gj
+   xnoremap <up> gk
+
 "Split navigation
     nmap gh <C-w>h
     nmap gj <C-w>j
     nmap gk <C-w>k
     nmap gl <C-w>l
+
 
 " number lines
 set nu
