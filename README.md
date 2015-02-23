@@ -11,7 +11,7 @@ ln -s .dotfiles/.vimrc
 ln -s .dotfiles/.gitconfig
 ```
 
-Also, if you want to add local configuration files for bash, it looks for them in the following files (which you can create):
+You'll want to change the information in `.gitconfig`, which is specific to me. Also, if you want to add local configuration files for bash, it looks for them in the following files (which you can create):
 ```
 .dotfiles/bash/bash_aliases_local
 .dotfiles/bash/bash_paths_local
