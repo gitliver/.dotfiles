@@ -49,11 +49,11 @@ set term=builtin_ansi
 set pastetoggle=<Leader>1
 
 " http://www.techrepublic.com/blog/linux-and-open-source/create-custom-keybindings-in-vim/
-" map CTRL-E to end-of-line (insert mode)
+" in insert mode, map CTRL-E to end-of-line (insert mode)
 inoremap <C-e> <esc>$i<right>
-" map CTRL-A to beginning-of-line (insert mode)
+" in insert mode, map CTRL-A to beginning-of-line (insert mode)
 inoremap <C-a> <esc>0i
-
+" in insert mode, typing jj puts you into normal mode
 inoremap jj <esc>
 
 " set macro @s to add HTML tags around a word
@@ -63,3 +63,25 @@ let @c='bi<code>ea</code>'
 let @i='bi<i>ea</i>'
 let @s='bi<samp>ea</samp>'
 let @u='bi<u>ea</u>'
+let @m='bi<small>ea</small>'
+
+" in normal mode, kk calls Pythonic func to toggle 4 space vs 8 space indents
+nnoremap kk :call Pythonic()<cr>
+
+function! Pythonic()
+    " toggle function to make tabs pythonic - i.e., if tab 8 spaces, make 4 but if tab 4 spaces make 8
+    " http://stackoverflow.com/questions/234564/tab-key-4-spaces-and-auto-indent-after-curly-braces-in-vim
+
+    " echom &tabstop
+    if &tabstop == 8
+        set tabstop=4
+        set shiftwidth=4
+        set expandtab
+        echom "Number of spaces per tab:"&tabstop
+    elseif &tabstop == 4
+        set tabstop=8
+        set shiftwidth=8
+        set expandtab
+        echom "Number of spaces per tab:"&tabstop
+    endif
+endfunction 
