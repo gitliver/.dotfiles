@@ -18,7 +18,7 @@ alias noempty="perl -ne '{print if not m/^(\s*)$/}'"
 # awk 
 alias awkf="awk -F'\t'"
 alias length="awk '{print length}'"
-# notesappend
+# notesappend, my favorite alias
 alias n="history | tail -2 | head -1 | tr -s ' ' | cut -d' ' -f3- | awk '{print \"# \"\$0}' >> notes"
 
 # HTML-related
@@ -27,12 +27,19 @@ alias htmlsed="sed 's|\&|\&amp\;|g; s|>|\&gt\;|g; s|<|\&lt\;|g;'"
 # git
 alias ga="git add" 
 alias gc="git commit -m"
-alias gpull="git pull"
-alias gp="git push"
+alias gac="git commit -a -m"
+alias gp="git pull"
+alias gpush="git push"
 alias gs="git status"
 alias gl="git log"
-alias gg="git log --pretty=format:'%h %s %an' --graph"
+alias gg="git log --oneline --decorate --graph --all"
+# alias gg="git log --pretty=format:'%h %s %an' --graph"
+alias gb="git branch"
+alias gch="git checkout"
+alias gls="git ls-files"
+alias gd="git diff"
 
 # bioinformatics
 # useful for viewing vcf files: 
 alias vv="sed '/^##/d' | column -t | less -S"
+alias vvv="sed '/^##/d' | column -t -s'	' | less -S"
