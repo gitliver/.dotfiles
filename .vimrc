@@ -65,8 +65,8 @@ let @s='bi<samp>ea</samp>'
 let @u='bi<u>ea</u>'
 let @m='bi<small>ea</small>'
 
-" in normal mode, kk calls Pythonic func to toggle 4 space vs 8 space indents
-nnoremap kk :call Pythonic()<cr>
+" in normal mode, <Leader>4 calls Pythonic func to toggle 4 space vs 8 space indents
+nnoremap <Leader>4 :call Pythonic()<cr>
 
 function! Pythonic()
     " toggle function to make tabs pythonic - i.e., if tab 8 spaces, make 4 but if tab 4 spaces make 8
