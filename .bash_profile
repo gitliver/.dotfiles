@@ -59,3 +59,8 @@ if [ -e "${INIT_DIR}/bash_functions_share" ]; then
 	source "${INIT_DIR}/bash_functions_share"
 	echo "bash_functions_share loaded"
 fi
+
+echo
+
+cal 
+echo -e "Today is "$( date )"\n"
