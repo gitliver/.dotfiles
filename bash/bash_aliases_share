@@ -40,6 +40,13 @@ alias gls="git ls-files"
 alias gd="git diff"
 
 # bioinformatics
-# useful for viewing vcf files: 
+# useful for viewing files which have many columns in the terminal: 
 alias vv="sed '/^##/d' | column -t | less -S"
+# ditto - but if columns contain spaces in fields, specify tab delimiter:
 alias vvv="sed '/^##/d' | column -t -s'	' | less -S"
+# count columns
+alias colcount="awk -F'\t' '{if (NR==1) { for (i=1; i<=NF; i++) {printf i; for (j=1; j<=int(length(\$i)/8); j++) {printf \"\t\"}; if (i==NF) {printf \"\n\"} else {printf \"\t\"}}; print \$0 } else {print \$0}}'"
+# combine colcount and vvv
+alias cv="colcount | vvv"
+# mesh together with colons the fields of two rows
+alias dt="datamash transpose --no-strict | sed 's|\t|:|g' | tr '\n' '\t'; echo"
