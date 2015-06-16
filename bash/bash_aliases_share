@@ -5,6 +5,7 @@ alias s="less -S"
 alias l="ls -hl"
 alias lt="ls -hlt"
 alias ll="ls -al"
+alias tt="ls -1t | head"
 alias rr="rm -r"
 alias r="readlink -m"
 alias ct="column -t"
@@ -12,6 +13,10 @@ alias ch="chmod -R 755"
 alias chh="chmod -R 644"
 alias grep="grep --color"
 alias yy="rsync -azv --progress"
+# number lines alternative to nl
+alias nn="awk '{print NR\"\t\"\$0}'"
+# remove comments
+alias sd="sed '/^#/d'"
 # remove empty lines with white space
 alias noempty="perl -ne '{print if not m/^(\s*)$/}'"
 
