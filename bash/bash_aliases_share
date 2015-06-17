@@ -6,6 +6,7 @@ alias l="ls -hl"
 alias lt="ls -hlt"
 alias ll="ls -al"
 alias tt="ls -1t | head"
+alias cx='cd `ls -t | head -1`'
 alias rr="rm -r"
 alias r="readlink -m"
 alias ct="column -t"
