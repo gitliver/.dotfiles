@@ -1,7 +1,8 @@
 # coreutils
 alias c="cat"
 alias e="clear"
-alias s="less -S"
+# alias s="less -S"
+alias s="less"
 alias l="ls -hl"
 alias lt="ls -hltr"
 alias ll="ls -al"
@@ -13,6 +14,8 @@ alias ct="column -t"
 alias ch="chmod -R 755"
 alias chh="chmod -R 644"
 alias grep="grep --color"
+# prevent mv from automatically replacing files
+alias mv="mv -i"
 alias yy="rsync -azv --progress"
 # number lines alternative to nl
 alias nn="awk '{print NR\"\t\"\$0}'"
