@@ -42,3 +42,15 @@ export PROMPT_COMMAND='history -a'
 # unset time zone variable, in case it's set
 unset TZ
 
+# set prompt
+# mac default:
+# export PS1='\h:\W \u\$ '
+# my old default:
+# PS1='\[\033]0;\h:\W\007\]\h:\W] '
+
+parse_git_branch() {
+  git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
+}
+
+# add git branch to prompt
+export PS1="\[\033]0;\h:\W\007\]\h:\W\$(parse_git_branch)] "

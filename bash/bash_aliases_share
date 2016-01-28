@@ -19,6 +19,10 @@ alias mv="mv -i"
 alias yy="rsync -azv --progress"
 # number lines alternative to nl
 alias nn="awk '{print NR\"\t\"\$0}'"
+# use with du -sh : find things in the gigabyte or terabyte range
+alias gig="awk '\$1 ~ /G|T/'"
+# translate newlines to commas
+alias ma="tr '\n' ','"
 # remove comments
 alias sd="sed '/^#/d'"
 # remove empty lines with white space
@@ -43,6 +47,8 @@ alias gs="git status"
 alias gl="git log"
 alias gg="git log --oneline --decorate --graph --all"
 # alias gg="git log --pretty=format:'%h %s %an' --graph"
+# include author name:
+alias ggg='git log --graph --pretty=format:"%Cred%h%x09%Creset%an%x09%ad%x09%Cgreen%s"'
 alias gb="git branch"
 alias gch="git checkout"
 alias gls="git ls-files"
