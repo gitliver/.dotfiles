@@ -48,6 +48,7 @@ unset TZ
 # my old default:
 # PS1='\[\033]0;\h:\W\007\]\h:\W] '
 
+# via: https://techcommons.stanford.edu/topics/git/show-git-branch-bash-prompt
 parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
