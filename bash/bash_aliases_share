@@ -38,8 +38,9 @@ alias n="history | tail -2 | head -1 | tr -s ' ' | cut -d' ' -f3- | awk '{print 
 alias htmlsed="sed 's|\&|\&amp\;|g; s|>|\&gt\;|g; s|<|\&lt\;|g;'"
 
 # git
+alias ga="git add" 
 # add only previously tracked files
-alias ga="git add -u" 
+alias gaa="git add -u" 
 alias gc="git commit -m"
 alias gac="git commit -a -m"
 alias gp="git pull"
