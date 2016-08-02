@@ -1,6 +1,6 @@
 # coreutils
 alias c="cat"
-alias e="clear"
+alias e="echo"
 # alias s="less -S"
 alias s="less"
 alias l="ls -hl"
