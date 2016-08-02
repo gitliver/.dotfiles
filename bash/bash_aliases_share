@@ -27,6 +27,8 @@ alias ma="tr '\n' ','"
 alias sd="sed '/^#/d'"
 # remove empty lines with white space
 alias noempty="perl -ne '{print if not m/^(\s*)$/}'"
+# replace spaces with underscores
+alias u="sed 's/ /_/g'"
 
 # awk 
 alias awkf="awk -F'\t'"
