@@ -1,4 +1,8 @@
-# coreutils
+### python
+alias python="python3"
+alias pip="pip3"
+
+### coreutils
 alias c="cat"
 alias e="echo"
 # alias s="less -S"
@@ -31,16 +35,16 @@ alias noempty="perl -ne '{print if not m/^(\s*)$/}'"
 # replace spaces with underscores
 alias u="tr ' ' '_'"
 
-# awk 
+### awk
 alias awkf="awk -F'\t'"
 alias length="awk '{print length}'"
 # notesappend, my favorite alias
 alias n="history | tail -2 | head -1 | tr -s ' ' | cut -d' ' -f3- | awk '{print \"# \"\$0}' >> notes"
 
-# HTML-related
+### HTML-related
 alias htmlsed="sed 's|\&|\&amp\;|g; s|>|\&gt\;|g; s|<|\&lt\;|g;'"
 
-# git
+### git
 alias ga="git add" 
 # add only previously tracked files
 alias gaa="git add -u" 
@@ -59,7 +63,7 @@ alias gch="git checkout"
 alias gls="git ls-files"
 alias gd="git diff"
 
-# bioinformatics
+### bioinformatics
 # useful for viewing files which have many columns in the terminal: 
 alias vv="sed '/^##/d' | column -t | less -S"
 # ditto - but if columns contain spaces in fields, specify tab delimiter:
