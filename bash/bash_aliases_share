@@ -65,7 +65,7 @@ alias gd="git diff"
 
 ### docker
 alias di="docker image ls"
-alias db="docker build"
+alias db="docker build -t"
 alias dp="docker push"
 alias dcp="docker container prune"
 alias dps="docker ps -a"
