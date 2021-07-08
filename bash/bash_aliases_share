@@ -1,14 +1,14 @@
-### python
-alias python="python3"
-alias pip="pip3"
+### notesappend, my favorite alias
+alias n="echo -n '# ' >> notes && history | tail -2 | head -1 | tr -s ' ' | cut -d' ' -f3- >> notes"
+# alias n="history | tail -2 | head -1 | tr -s ' ' | cut -d' ' -f3- | awk '{print \"# \"\$0}' >> notes"
 
 ### coreutils
 alias c="cat"
 alias e="echo"
-# alias s="less -S"
 alias s="less"
 alias ls="ls --color=auto"
 alias l="ls -hl --color=auto"
+alias lg="ls -hl --color=auto --group-directories-first"
 alias lt="ls -hltr --color=auto"
 alias ll="ls -al --color=auto"
 alias tt="ls -1t | head"
@@ -32,14 +32,12 @@ alias ma="tr '\n' ','"
 alias sd="sed '/^#/d'"
 # remove empty lines with white space
 alias noempty="perl -ne '{print if not m/^(\s*)$/}'"
-# replace spaces with underscores
-alias u="tr ' ' '_'"
 
 ### awk
 alias awkf="awk -F'\t'"
 alias length="awk '{print length}'"
-# notesappend, my favorite alias
-alias n="history | tail -2 | head -1 | tr -s ' ' | cut -d' ' -f3- | awk '{print \"# \"\$0}' >> notes"
+alias nf="awk '{print \$NF}'"
+alias listify="awk 'BEGIN{print \"[\"}{print \"@\"\$0\"@,\"}END{print \"]\"}' | tr '@' \"'\" | tr -d \"\n\" && echo"
 
 ### HTML-related
 alias htmlsed="sed 's|\&|\&amp\;|g; s|>|\&gt\;|g; s|<|\&lt\;|g;'"
@@ -55,7 +53,6 @@ alias gpush="git push"
 alias gs="git status"
 alias gl="git log"
 alias gg="git log --oneline --decorate --graph --all"
-# alias gg="git log --pretty=format:'%h %s %an' --graph"
 # include author name:
 alias ggg='git log --graph --pretty=format:"%Cred%h%x09%Creset%an%x09%ad%x09%Cgreen%s"'
 alias gb="git branch"
@@ -65,10 +62,13 @@ alias gd="git diff"
 
 ### docker
 alias di="docker image ls"
-alias db="docker build -t"
+alias db="docker build"
 alias dp="docker push"
 alias dcp="docker container prune"
 alias dps="docker ps -a"
+
+### aws
+alias al="aws s3 ls --human-readable"
 
 ### bioinformatics
 # useful for viewing files which have many columns in the terminal: 
@@ -81,3 +81,12 @@ alias colcount="awk -F'\t' '{if (NR==1) { for (i=1; i<=NF; i++) {printf i; for (
 alias cv="colcount | vvv"
 # mesh together with colons the fields of two rows
 alias dt="datamash transpose --no-strict | sed 's|\t|:|g' | tr '\n' '\t'; echo"
+
+### fuzzy find
+alias f='fzf'
+alias cf='cat $( fzf )'
+alias of='open $( fzf )'
+
+### misc
+alias sv="source venv/bin/activate"
+alias scrub='perl -ne "{s/\^\[(\w)+\]//g; s/\[(\w)+\]//g; print $_}"'
