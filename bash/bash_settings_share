@@ -14,8 +14,8 @@ bind '"\e[1;5D": backward-word'	# control+arrow_left
 # this was my original thought but changing the escape char in screen is more comfortable. FYI, C-f and C-b are ripe for re-binding because forward-character backward-character are useless
 
 # make history searchable by entering the beginning of command and using up and down keys
-bind '"\e[A": history-search-backward'	# control+arrow_up
-bind '"\e[B": history-search-forward'	# control+arrow_down
+bind '"\e[A": history-search-backward'	# arrow_up
+bind '"\e[B": history-search-forward'	# arrow_down
 
 # see all readline functions and what their bey bindings are
 bind '"\ea": dump-functions'	# ESC+a
