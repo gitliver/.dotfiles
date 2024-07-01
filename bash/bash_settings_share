@@ -4,10 +4,12 @@
 # see current key bindings: bind -P
 
 # make cursor jump over words
-# bind '"\e[5C": forward-word'	# control+arrow_right
-# bind '"\e[5D": backward-word'	# control+arrow_left
+bind '"\e[5C": forward-word'	# control+arrow_right
+bind '"\e[5D": backward-word'	# control+arrow_left
 bind '"\e[1;5C": forward-word'	# control+arrow_right
 bind '"\e[1;5D": backward-word'	# control+arrow_left
+
+# bind '"\e\033[1;5C": forward-word'	# control+arrow_right
 
 # change beginning-of-line key binding b/c it interferes w screen command
 # bind '"\C-f": beginning-of-line'        # control-a is used by screens, so use control-f to jump to beginning of line (and unbind it from forward character, which is pretty useless)
