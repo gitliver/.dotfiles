@@ -88,5 +88,7 @@ alias cf='cat $( fzf )'
 alias of='open $( fzf )'
 
 ### misc
+alias jl="jupyter lab"
+alias cab="conda activate base"
 alias sv="source venv/bin/activate"
 alias scrub='perl -ne "{s/\^\[(\w)+\]//g; s/\[(\w)+\]//g; print $_}"'
